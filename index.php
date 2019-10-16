@@ -11,11 +11,11 @@ require 'Model/CustomerLoader.php';
 
 $controller = new HomeController();
 
-if (!isset($_GET['customer'])){
-    $_GET['customer'] = 0;
-    $controller -> render((int)$_GET['customer']);
+if (!isset($_GET['customerId'])){
+    $_GET['customerId'] = 0;
+    $controller -> render((int)$_GET['customerId']);
 }
 else{
-    $controller -> render((int)$_GET['customer']);
+    $controller -> render((int)$_GET['customerId']);
 }
 
