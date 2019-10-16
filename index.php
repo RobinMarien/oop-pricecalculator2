@@ -10,4 +10,12 @@ require 'Model/Customer.php';
 require 'Model/CustomerLoader.php';
 
 $controller = new HomeController();
-$controller -> render((int)$_GET['customerId']);
+
+if (!isset($_GET['customer'])){
+    $_GET['customer'] = 0;
+    $controller -> render((int)$_GET['customer']);
+}
+else{
+    $controller -> render((int)$_GET['customer']);
+}
+

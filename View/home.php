@@ -10,6 +10,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Your name <?php echo $customer->getName()?> </h2>
+<form>
+    <select name = "customer">
+        <?php foreach($allCustomers AS $customerItem):?>
+            <option value="<?php echo $customerItem->getId()?>"><?php echo $customerItem->getName()?></option> <!-- Notice that we put the getID in the value
+    and the getName in the displayed field So, what is says is: when the user will select the name from the drop down, the id of that name will be put into
+    the value. That value will be used to fetch all your info, through the return function.
+    Be aware: if you would put "name" instead of "id" in the value , you would have to rewrite all the function to use name to look up information!-->
+        <?php endforeach; ?>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+
+<h2>Your name <?php echo $customer->getName()?> </h2>
 </body>
 </html>
