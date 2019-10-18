@@ -8,6 +8,8 @@ error_reporting(E_ALL);
 require 'Controller/HomeController.php';
 require 'Model/Customer.php';
 require 'Model/CustomerLoader.php';
+require 'Model/Product.php';
+require 'Model/ProductLoader.php';
 
 session_start();
 

@@ -36,11 +36,11 @@
 
             <option value="<?php echo $productItem->getId()?>"
 
-                <?php if(isset($_GET["product"]) && $_GET["product"] == $customerItem->getId()){
+                <?php if(isset($_GET["product"]) && $_GET["product"] == $productItem->getId()){
                     echo ' selected="selected"';}
                 ?>>
 
-                <?php echo $customerItem->getName()?>
+                <?php echo $productItem->getName()?>
 
             </option>
         <?php endforeach; ?>
@@ -50,6 +50,7 @@
 </form>
 
 <h2>Your name <?php echo $customer->getName()?> </h2>
+<h2>Your product <?php echo $product->getName()?> </h2>
 
 </body>
 </html>
