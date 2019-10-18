@@ -11,6 +11,7 @@ require 'Model/CustomerLoader.php';
 require 'Model/Product.php';
 require 'Model/ProductLoader.php';
 
+
 session_start();
 
 function whatIsHappening() {
