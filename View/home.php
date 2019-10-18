@@ -10,13 +10,15 @@
     <title>Document</title>
 </head>
 <body>
-<form>
-    <select name = "customerId">
+<form method="get">
+    <select name = "customer">
         <?php foreach($allCustomers AS $customerItem):?>
 
-            <option value="<?php echo $customerItem->getId()?>" <?php if(isset($_GET["customerId"]) && $_GET["customerId"] == $customerItem->getId())
-                echo ' selected="selected"';
-            ?>>
+            <option value="<?php echo $customerItem->getId()?>"
+
+                <?php if(isset($_GET["customer"]) && $_GET["customer"] == $customerItem->getId()){
+                    echo ' selected="selected"';}
+                ?>>
 
                 <?php echo $customerItem->getName()?>
 
@@ -28,9 +30,26 @@
             Be aware: if you would put "name" instead of "id" in the value , you would have to rewrite all the function to use name to look up information!-->
         <?php endforeach; ?>
     </select>
+
+    <select name = "product">
+        <?php foreach($allProducts AS $productItem):?>
+
+            <option value="<?php echo $productItem->getId()?>"
+
+                <?php if(isset($_GET["product"]) && $_GET["product"] == $customerItem->getId()){
+                    echo ' selected="selected"';}
+                ?>>
+
+                <?php echo $customerItem->getName()?>
+
+            </option>
+        <?php endforeach; ?>
+    </select>
+
     <button type="submit">Submit</button>
 </form>
 
 <h2>Your name <?php echo $customer->getName()?> </h2>
+
 </body>
 </html>

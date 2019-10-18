@@ -9,13 +9,27 @@ require 'Controller/HomeController.php';
 require 'Model/Customer.php';
 require 'Model/CustomerLoader.php';
 
+session_start();
+
+function whatIsHappening() {
+    echo '<h2>$_GET</h2>';
+    var_dump($_GET);
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+    echo '<h2>$_COOKIE</h2>';
+    var_dump($_COOKIE);
+    echo '<h2>$_SESSION</h2>';
+    var_dump($_SESSION);
+}
+
 $controller = new HomeController();
 
-if (!isset($_GET['customerId'])){
-    $_GET['customerId'] = 0;
-    $controller -> render((int)$_GET['customerId']);
-}
-else{
-    $controller -> render((int)$_GET['customerId']);
+if (!isset($_GET['customer'])){
+    $_GET['customer'] = 0;
 }
 
+if (!isset($_GET['product'])){
+    $_GET['product'] = 0;
+}
+
+$controller -> render((int)$_GET['customer'], (int)$_GET['product']);
