@@ -49,22 +49,34 @@
         <?php endforeach; ?>
     </select>
 
-    <button type="submit">Submit</button>
+    <button type="submit">Search</button>
 </form>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h2>Customer:</h2>
-            <ul>
-                <li><?php echo $customer->getName()?></li>
-
+            <ul class="text-left">
+                <li>Name: <?php echo $customer->getName()?></li>
+                <li>ID: <?php echo $customer->getId()?></li>
+                <li>Group: <?php echo $customer->getGroup()?></li>
             </ul>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h2>Product:</h2>
-            <ul>
-                <li><?php echo $product->getName()?></li>
-
+            <ul class="text-left">
+                <li>Name: <?php echo $product->getName()?></li>
+                <li>Id: <?php echo $product->getId()?></li>
+                <li>Description: <?php echo $product->getDescription()?></li>
+                <li>Price: <?php echo $product->getPrice()?></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>Group:</h2>
+            <ul class="text-left">
+                <li>Name: <?php echo $product->getName()?></li>
+                <li>Id: <?php echo $product->getId()?></li>
+                <li>Description: <?php echo $product->getDescription()?></li>
+                <li>Price: <?php echo $product->getPrice()?></li>
             </ul>
         </div>
     </div>
