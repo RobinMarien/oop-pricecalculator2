@@ -49,8 +49,9 @@
     <button type="submit">Submit</button>
 </form>
 
-<h2>Your name <?php echo $customer->getName()?> </h2>
-<h2>Your product <?php echo $product->getName()?> </h2>
+<h2>Selected name: <?php echo $customer->getName()?> </h2>
+
+<h2>Selected product: <?php echo $product->getName()?> </h2>
 
 </body>
 </html>
