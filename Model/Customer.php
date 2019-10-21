@@ -8,7 +8,7 @@ class Customer
     private $group;
 
 
-    public function __construct(int $_id, string $_name, Group $_group)
+    public function __construct(int $_id, string $_name, int $_group)
     {
         $this->id = $_id;
         $this->name = $_name;
@@ -23,7 +23,7 @@ class Customer
         return $this -> name;
     }
 
-    public function getGroup() : Group {
+    public function getGroup() : int {
         return $this -> group;
     }
 

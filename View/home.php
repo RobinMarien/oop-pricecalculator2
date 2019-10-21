@@ -13,6 +13,7 @@
 
 </head>
 <body class="text-center">
+
 <form method="get">
     <select name = "customer">
         <?php foreach($allCustomers AS $customerItem):?>
@@ -73,13 +74,13 @@
         <div class="col-md-4">
             <h2>Group:</h2>
             <ul class="text-left">
+                <li>ID: <?php echo $group->getId()?></li>
                 <li>Name: <?php echo $group->getName()?></li>
-                <li>Discount: <?php echo $group->getDiscount()?></li>
-                <li>Group: <?php echo $group->getGroup()?></li>
+                <li>Discount: <?php echo $group->getDiscount()->getValue()?></li>
+                <li>Group: <?php echo $group->getGroup()->getId()?></li>
             </ul>
         </div>
     </div>
 </div>
-
 </body>
 </html>

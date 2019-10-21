@@ -12,6 +12,10 @@ class HomeController //to connect all the files (model and view)
         $loaderProduct= new ProductLoader();
         $product = $loaderProduct->loadProductById($productId);
         $allProducts = $loaderProduct->loadProducts();
+
+        $loaderGroup= new GroupsLoader();
+        $allGroups = $loaderGroup->loadGroups();
+        $group = $loaderGroup->loadGroupById($customer->getGroup());
         require 'View/home.php';
     }
 }

@@ -5,7 +5,7 @@ class GroupsLoader
     private $groups=[];
     public function __construct()
     {
-        $json=json_decode(file_get_contents("data/groups.json"),true);
+        $json=json_decode(file_get_contents("Data/groups.json"),true);
         foreach ($json AS $groupJson){
             if(isset($groupJson['variable_discount'])) {
                 $discount = new Discount(Discount::VARIABLE, $groupJson['variable_discount']);
@@ -18,5 +18,13 @@ class GroupsLoader
             }
             $this->groups[$groupJson["id"]]= new Group($groupJson['id'], $groupJson['name'], $discount, $group);
         }
+    }
+
+    public function loadGroups(): array{
+        return $this->groups;
+    }
+
+    public function loadGroupById (int $groupId) :? Group {
+       return $this->groups[$groupId];
     }
 }
