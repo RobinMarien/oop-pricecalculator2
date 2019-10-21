@@ -73,10 +73,9 @@
         <div class="col-md-4">
             <h2>Group:</h2>
             <ul class="text-left">
-                <li>Name: <?php echo $product->getName()?></li>
-                <li>Id: <?php echo $product->getId()?></li>
-                <li>Description: <?php echo $product->getDescription()?></li>
-                <li>Price: <?php echo $product->getPrice()?></li>
+                <li>Name: <?php echo $group->getName()?></li>
+                <li>Discount: <?php echo $group->getDiscount()?></li>
+                <li>Group: <?php echo $group->getGroup()?></li>
             </ul>
         </div>
     </div>
